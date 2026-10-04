@@ -1,6 +1,6 @@
 # IUBPC Robotics Challenge - Arduino Solution Code
 
-Welcome to the official repository containing solution code for the **IUBPC Robotics Challenge**. This collection provides fully tested Arduino Uno sketches for 8 hands-on robotics and electronics challenge cards ranging from fundamental digital output to sensor integrations and interactive games.
+Welcome to the official repository containing solution code for the **IUBPC Robotics Challenge**. This collection provides fully tested Arduino Uno sketches for 9 hands-on robotics and electronics challenge cards ranging from fundamental digital output to complex state-machine sensor integrations and the final Boss Vault challenge.
 
 ---
 
@@ -16,6 +16,7 @@ Welcome to the official repository containing solution code for the **IUBPC Robo
 | **06** | [Smart Door](./06_Smart_Door/06_Smart_Door.ino) | Servo Motor, Pushbutton | `Servo.h` library, PWM angular control, automated hold delay |
 | **07** | [Intruder Alarm](./07_Intruder_Alarm/07_Intruder_Alarm.ino) | HC-SR04 Sensor, Buzzer, LED, Pushbutton | State latching (armed/disarmed), multi-sensor logic |
 | **08** | [Reaction Game](./08_Reaction_Game/08_Reaction_Game.ino) | LED, Pushbutton, Serial Monitor | `millis()`, `random()`, millisecond precision timing |
+| **09 (BOSS)** | [The Vault](./09_Boss_Vault/09_Boss_Vault.ino) | Servo, HC-SR04 Sensor, Buzzer, Red/Green LEDs, Pushbutton | State machine (`LOCKED`, `OPEN`, `LOCKOUT`), proximity wake-up, secret knock code (`S-S-L-S`), debouncing, fail lockout |
 
 ---
 
@@ -64,23 +65,32 @@ Welcome to the official repository containing solution code for the **IUBPC Robo
 - **Pin 2**: Reaction Trigger Button (`INPUT_PULLUP`)
 - **Pin 13**: Target Signal LED
 
+#### 9. BOSS: The Vault
+- **Pin 2**: Knock Pattern Button (`INPUT_PULLUP`)
+- **Pin 6**: HC-SR04 Echo (`ECHO`)
+- **Pin 7**: HC-SR04 Trigger (`TRIG`)
+- **Pin 8**: Audio Feedback Buzzer
+- **Pin 9**: Servo Lock Mechanism (`PWM`)
+- **Pin 12**: Green LED (Unlocked Status)
+- **Pin 13**: Red LED (Locked Status / Lockout Flasher)
+
 ---
 
 ## 🚀 Getting Started
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/hlam7/IUBPC_Arduino_Solution_Code.git
+   git clone https://github.com/ahlam26824/IUBPC_Arduino_Solution_Code.git
    cd IUBPC_Arduino_Solution_Code
    ```
 
 2. **Open in Arduino IDE**:
-   - Open any `.ino` file inside its respective subfolder (e.g., `01_Traffic_Light/01_Traffic_Light.ino`).
+   - Open any `.ino` file inside its respective subfolder (e.g., `09_Boss_Vault/09_Boss_Vault.ino`).
    - Select Board: **Arduino Uno**.
    - Select your COM Port and click **Upload**.
 
 3. **Serial Monitor**:
-   - For **05_Night_Light** and **08_Reaction_Game**, open the Serial Monitor at **9600 baud rate** to view real-time readings and reaction timings.
+   - For **05_Night_Light**, **08_Reaction_Game**, and **09_Boss_Vault**, open the Serial Monitor at **9600 baud rate** to view real-time logs, threshold readings, and state machine event logging.
 
 ---
 
